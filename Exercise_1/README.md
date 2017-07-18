@@ -16,4 +16,4 @@ Description:
 * Click on the input’s label should put focus into the input
 * Notice footnotes used  in the paragraph
 
-(https://github.com/kdmrulez/front-end__mentoring-program/blob/1_exercise/Exercise_1/img/expected_final_result.png)
+![Expected result](https://github.com/kdmrulez/front-end__mentoring-program/blob/1_exercise/Exercise_1/img/expected_final_result.png)
