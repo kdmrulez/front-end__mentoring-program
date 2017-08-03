@@ -10,4 +10,4 @@
 * Use flexbox where applicable +++
 * Use Chrome Developer Tools extensively to try CSS modifications faster +++
 
-* tab-menu is breadcrumbs and it is not <nav> anymore
+* tab-menu is breadcrumbs and it is not nav anymore
