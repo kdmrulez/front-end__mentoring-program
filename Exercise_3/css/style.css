@@ -1,0 +1,207 @@
+/*COMMON*/
+html, body {
+    font-size: 10px;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+/*HEADER*/
+.header {
+    border-bottom: solid 0.1rem black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__title {
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    font-size: 1rem;
+}
+
+.sign-up__emails {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem 0rem 3rem 1rem;
+}
+
+.sign-up__launching-date {
+    font-style: italic;
+    margin: 1rem 0rem 1rem 1rem;
+}
+
+.sign-up__access {
+    margin-left: 1rem;
+    text-decoration: underline;
+}
+
+.sign-up__special-sign {
+    font-size: 0.7rem;
+}
+
+.sign-in {
+    width: 20vw;
+    align-items: flex-end;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-in__registration {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem;
+}
+
+.sign-in__input {
+    width: 15vw;
+    margin: 0rem 0.4rem 1rem 0;
+}
+
+.sign-in__shipping {
+    font-style: italic;
+    margin-right: 0.4rem;
+}
+
+.sign-in__shipping-details {
+    text-decoration: underline;
+}
+
+/*MENU*/
+.menu {
+    border-bottom: solid 0.1rem lightgrey;
+    display: flex;
+    justify-content: center;
+}
+
+.menu__item {
+    color: black;
+    font-size: 1.5rem;
+    margin: 2rem;
+}
+
+.menu__item:hover {
+    color: lightblue;
+}
+
+/*SUBMENU*/
+.submenu {
+    border-bottom: solid 0.1rem black;
+    display: flex;
+    justify-content: center;
+}
+
+.submenu__item {
+    font-size: 1.3rem;
+    margin: 1rem 1.5rem;
+}
+
+/*TAB MENU*/
+.tab-menu {
+    margin: 1rem 0rem 1.5rem 1rem;
+}
+
+.tab-menu__item {
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.tab-menu__item:last-of-type {
+    margin-left: 0.5rem;
+}
+
+/*MAIN*/
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    width: 6.5vw;
+}
+
+.categories__title {
+    color: black;
+    margin: 1rem 0.5rem 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.categories__item {
+    font-size: 0.9rem;
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.categories__view-all {
+    color: blue;
+    font-size: 0.9rem;
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+/*SHOP SECTION*/
+.shop {
+    align-items: center;
+    border: solid 0.1rem grey;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.4rem;
+    height: 15rem;
+    width: 30rem;
+}
+
+.shop__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 2rem 0rem;
+}
+
+.shop__button {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: solid 0.12rem black;
+}
+
+/*FOOTER*/
+.footer {
+    align-items: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    justify-content: center;
+    padding: 3rem 0rem 2rem 0rem;
+}
+
+.footer__item {
+    color: white;
+    padding: 0rem 0.5rem;
+}
+
+.footer__logo {
+    margin-top: 1rem;
+}
