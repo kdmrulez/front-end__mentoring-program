@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </head>
 <body>
 <header class="header">
@@ -22,7 +22,7 @@
         <nav class="side-menu__content">
             <input type="search" class="search-bar" placeholder="&#xf002"/>
             <ul class="list">
-                <li class="list-item"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Shop</li>
+                <li class="list-item"><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>Shop</li>
             </ul>
             <ul class="list">
                 <h1 class="list-title">EXPLORE</h1>
@@ -34,9 +34,9 @@
                 <li class="list-item"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Get</li>
             </ul>
             <ul class="list">
-                <li class="list-item">SIGN IN</li>
+                <li class="list-item">SIGN&nbsp;IN</li>
                 <li class="list-item">BAG</li>
-                <li class="list-item">MY ACCOUNT</li>
+                <li class="list-item">MY&nbsp;ACCOUNT</li>
             </ul>
             <footer class="footer">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -53,9 +53,9 @@
     </span>
     <aside class="menu-registration">
         <input type="search" class="search-bar" placeholder="Search"/>
-        <span class="entry">Sign In</span>
-        <span class="entry">Register</span>
-        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        <a class="entry" href="#">Sign In</a>
+        <a class="entry" href="#">Register</a>
+        <a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
     </aside>
 </header>
 <nav class="navigation">
@@ -68,15 +68,17 @@
     <a class="navigation__item" href="#">GOOP WELLNESS</a>
     <a class="navigation__item" href="#">VIDEOS</a>
 </nav>
-<select class="select-navigation">
-    <option class="select-navigation__item" selected="selected" value="go">Go</option>
-    <option class="select-navigation__item" value="city_guides">CITY GUIDES</option>
-    <option class="select-navigation__item" value="recipes">RECIPES</option>
-    <option class="select-navigation__item" value="clean_beauty">CLEAN BEAUTY</option>
-    <option class="select-navigation__item" value="detox">DETOX</option>
-    <option class="select-navigation__item" value="goop label">GOOP LABEL</option>
-    <option class="select-navigation__item" value="goop wellness">GOOP WELLNESS</option>
-    <option class="select-navigation__item" value="videos">VIDEOS</option>
-</select>
+<div>
+    <select class="select-navigation">
+        <option class="select-navigation__item" selected="selected" value="go">Go</option>
+        <option class="select-navigation__item" value="city_guides">CITY GUIDES</option>
+        <option class="select-navigation__item" value="recipes">RECIPES</option>
+        <option class="select-navigation__item" value="clean_beauty">CLEAN BEAUTY</option>
+        <option class="select-navigation__item" value="detox">DETOX</option>
+        <option class="select-navigation__item" value="goop label">GOOP LABEL</option>
+        <option class="select-navigation__item" value="goop wellness">GOOP WELLNESS</option>
+        <option class="select-navigation__item" value="videos">VIDEOS</option>
+    </select>
+</div>
 </body>
 </html>
