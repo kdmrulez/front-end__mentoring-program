@@ -144,7 +144,7 @@ a {
     display: none;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
     .header__title {
         font-size: 3rem;
         margin: 0 auto;
