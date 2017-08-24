@@ -8,9 +8,9 @@
     font-size: 2rem;
     margin: 8rem auto 0 auto;
     width: 80vw;
-  }
 
-  .select-navigation__item {
-    font-size: 2rem;
+    &__item {
+      font-size: 2rem;
+    }
   }
 }

@@ -7,13 +7,13 @@
     display: flex;
     margin: 0 5rem;
     width: 30vw;
-  }
 
-  .primary-navigation__item {
-    color: black;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0 1rem;
-    text-decoration: none;
+    &__item {
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0 1rem;
+      text-decoration: none;
+    }
   }
 }
