@@ -1,0 +1,9 @@
+@import '../variables';
+
+/*REGISTRATION*/
+
+@media only screen and (max-width: $small-screen_max-width) {
+  .registration {
+    display: none;
+  }
+}
