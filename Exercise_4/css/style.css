@@ -81,8 +81,8 @@
       font-size: 1.2rem;
       padding: 1rem 2rem;
       text-decoration: none; }
-    .sub-navigation__item--highlighted {
-      font-weight: bold; } }
+      .sub-navigation__item--highlighted {
+        font-weight: bold; } }
 /*SCREEN SIZES*/
 /*FONT SIZES*/
 /*SIDE-MENU*/
@@ -172,8 +172,8 @@
     .registration__entry {
       font-size: 1.2rem;
       padding: 0 0.5rem; }
-    .registration__entry--shop-link {
-      font-size: 2rem; } }
+      .registration__entry--shop-link {
+        font-size: 2rem; } }
 /*SCREEN SIZES*/
 /*FONT SIZES*/
 /*SELECT-NAVIGATION*/

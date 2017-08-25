@@ -16,8 +16,7 @@
       padding: 1rem;
     }
 
-    &:focus {
-      .side-menu__content-wrapper {
+    &:focus &__content-wrapper {
         background-color: white;
         box-shadow: 1rem 2rem 3rem darkgrey;
         display: flex;
@@ -31,7 +30,7 @@
         width: 30vw;
         z-index: 1;
       }
-    }
+
 
     &__search-bar {
       background-color: white;
