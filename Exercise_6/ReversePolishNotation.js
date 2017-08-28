@@ -1,12 +1,10 @@
 function calculate(argument, extraOperators) {
-    if (!argument) throw new Error(argument + " is not allowed");
+    if (!argument) throw new Error(`${argument} is not allowed`);
     const signs = argument.split(' ');
     const operators = {
-        "*": (firstValue, secondValue) => firstValue * secondValue,
-        "+": (firstValue, secondValue) => firstValue + secondValue,
-        "-": (firstValue, secondValue) => {
-            return secondValue - firstValue
-        }
+        '*': (firstValue, secondValue) => firstValue * secondValue,
+        '+': (firstValue, secondValue) => firstValue + secondValue,
+        '-': (firstValue, secondValue) => secondValue - firstValue
     };
 
 
@@ -31,7 +29,7 @@ function calculate(argument, extraOperators) {
             const secondValue = stack.pop();
             stack.push(operators[sign](firstValue, secondValue));
         } else {
-            throw new Error(sign + ' is not valid argument element')
+            throw new Error(`${sign} is not valid argument element`)
         }
         return stack;
     }, []);
