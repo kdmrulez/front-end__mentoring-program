@@ -17,24 +17,32 @@ const BoardActions = () => {
         document.getElementsByClassName('field')[lastSelectedField].style.backgroundColor = 'transparent';
     }
 
+    const drawingSignDelay = () => {
+        return new Promise(resolve => setTimeout(resolve, 300));
+    }
     return {
         putSign: (index) => {
-            if (!fields[index] && !isGameFinished) {
-                document.getElementsByClassName('field')[index].innerText = `${currentPlayerSign}`;
-                fields[index] = currentPlayerSign;
-                numberOfMoves++;
+            drawingSignDelay().then(
+                () => {
+                    if (!fields[index] && !isGameFinished) {
+                        document.getElementsByClassName('field')[index].innerText = `${currentPlayerSign}`;
+                        fields[index] = currentPlayerSign;
+                        numberOfMoves++;
 
-                if (numberOfMoves >= leastNumberOfMovesToWin) {
-                    isGameFinished = EndOfGameActions.checkWinning(index, fields);
+                        if (numberOfMoves >= leastNumberOfMovesToWin)
+                            isGameFinished = EndOfGameActions.checkWinning(index, fields);
+
+
+                        if (!isGameFinished && numberOfMoves === maxNumberOfMovesAllowed) {
+                            EndOfGameActions.draw();
+                            isGameFinished = true;
+                        }
+
+                        if (!isGameFinished) changeCurrentPlayer();
+                    }
                 }
+            );
 
-                if (!isGameFinished && numberOfMoves === maxNumberOfMovesAllowed) {
-                    EndOfGameActions.draw();
-                    isGameFinished = true;
-                }
-
-                if (!isGameFinished) changeCurrentPlayer();
-            }
         },
         highlightSelectedField: (index) => {
             clearPreviouslyHighlightedField();

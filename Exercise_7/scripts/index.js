@@ -110,7 +110,7 @@ const keyActions = () => {
         },
         /*DOWN KEY*/
         40: () => {
-            selectedFieldIndex = selectedFieldIndex >= 7 ? selectedFieldIndex - 6 : selectedFieldIndex + 3;
+            selectedFieldIndex = selectedFieldIndex >= 6 ? selectedFieldIndex - 6 : selectedFieldIndex + 3;
             __WEBPACK_IMPORTED_MODULE_0__BoardActions_js__["a" /* default */].highlightSelectedField(selectedFieldIndex);
         }
     }
@@ -148,24 +148,32 @@ const BoardActions = () => {
         document.getElementsByClassName('field')[lastSelectedField].style.backgroundColor = 'transparent';
     }
 
+    const drawingSignDelay = () => {
+        return new Promise(resolve => setTimeout(resolve, 300));
+    }
     return {
         putSign: (index) => {
-            if (!fields[index] && !isGameFinished) {
-                document.getElementsByClassName('field')[index].innerText = `${currentPlayerSign}`;
-                fields[index] = currentPlayerSign;
-                numberOfMoves++;
+            drawingSignDelay().then(
+                () => {
+                    if (!fields[index] && !isGameFinished) {
+                        document.getElementsByClassName('field')[index].innerText = `${currentPlayerSign}`;
+                        fields[index] = currentPlayerSign;
+                        numberOfMoves++;
 
-                if (numberOfMoves >= leastNumberOfMovesToWin) {
-                    isGameFinished = __WEBPACK_IMPORTED_MODULE_0__EndOfGameActions_js__["a" /* default */].checkWinning(index, fields);
+                        if (numberOfMoves >= leastNumberOfMovesToWin)
+                            isGameFinished = __WEBPACK_IMPORTED_MODULE_0__EndOfGameActions_js__["a" /* default */].checkWinning(index, fields);
+
+
+                        if (!isGameFinished && numberOfMoves === maxNumberOfMovesAllowed) {
+                            __WEBPACK_IMPORTED_MODULE_0__EndOfGameActions_js__["a" /* default */].draw();
+                            isGameFinished = true;
+                        }
+
+                        if (!isGameFinished) changeCurrentPlayer();
+                    }
                 }
+            );
 
-                if (!isGameFinished && numberOfMoves === maxNumberOfMovesAllowed) {
-                    __WEBPACK_IMPORTED_MODULE_0__EndOfGameActions_js__["a" /* default */].draw();
-                    isGameFinished = true;
-                }
-
-                if (!isGameFinished) changeCurrentPlayer();
-            }
         },
         highlightSelectedField: (index) => {
             clearPreviouslyHighlightedField();
@@ -191,7 +199,7 @@ const EndOfGameActions = () => {
         3: [[0, 6], [4, 5]],
         4: [[0, 8], [3, 5], [2, 6], [1, 7]],
         5: [[2, 8], [3, 4]],
-        6: [[0, 3], [7, 8]],
+        6: [[0, 3], [7, 8],[2,4]],
         7: [[1, 4], [6, 8]],
         8: [[0, 4], [2, 5], [6, 7]]
 

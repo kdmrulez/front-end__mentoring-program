@@ -25,7 +25,7 @@ const keyActions = () => {
         },
         /*DOWN KEY*/
         40: () => {
-            selectedFieldIndex = selectedFieldIndex >= 7 ? selectedFieldIndex - 6 : selectedFieldIndex + 3;
+            selectedFieldIndex = selectedFieldIndex >= 6 ? selectedFieldIndex - 6 : selectedFieldIndex + 3;
             BoardActions.highlightSelectedField(selectedFieldIndex);
         }
     }
