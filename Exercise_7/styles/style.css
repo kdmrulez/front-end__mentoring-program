@@ -18,7 +18,7 @@
     .board__row:last-of-type {
       border-bottom: 0.5rem solid black; }
 
-.field {
+.board__field {
   align-items: center;
   border-box: box-sizing;
   border-left: 0.5rem solid black;
@@ -27,11 +27,13 @@
   height: 5rem;
   justify-content: center;
   width: 5rem; }
-  .field:last-of-type {
+  .board__field:last-of-type {
     border-right: 0.5rem solid black; }
+  .board__field_highlighted {
+    background-color: lightgray; }
 
 @media screen and (min-width: 600px) {
-  .field {
+  .board__field {
     font-size: 10rem;
     height: 15rem;
     width: 15rem; } }

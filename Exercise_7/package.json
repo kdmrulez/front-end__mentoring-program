@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack scripts\\GameFlowController.js scripts\\index.js"
+    "build": "webpack scripts\\GameFlow.js scripts\\index.js"
   },
   "author": "Lukasz Jedrzejewski",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.15.4"
-  }
+  "license": "ISC"
 }
