@@ -1,38 +1,42 @@
-import BoardActions from './BoardActions.js'
-
-const keyActions = () => {
+const KeyActions = () => {
     let selectedFieldIndex = 4;
-
     const keyMoves = {
         /*SPACE KEY*/
-        32: () => {
-            BoardActions.putSign(selectedFieldIndex);
-        },
+        32: action => action(selectedFieldIndex),
+
         /*LEFT KEY*/
-        37: () => {
+        37: action => {
             selectedFieldIndex = selectedFieldIndex >= 1 ? --selectedFieldIndex : 8;
-            BoardActions.highlightSelectedField(selectedFieldIndex);
+            action(selectedFieldIndex);
         },
+
         /*UP KEY*/
-        38: () => {
+        38: action => {
             selectedFieldIndex = selectedFieldIndex <= 2 ? selectedFieldIndex + 6 : selectedFieldIndex - 3;
-            BoardActions.highlightSelectedField(selectedFieldIndex);
+            action(selectedFieldIndex);
         },
         /*RIGHT KEY*/
-        39: () => {
+        39: action => {
             selectedFieldIndex = selectedFieldIndex >= 8 ? 0 : ++selectedFieldIndex;
-            BoardActions.highlightSelectedField(selectedFieldIndex);
+            action(selectedFieldIndex);
         },
         /*DOWN KEY*/
-        40: () => {
+        40: action => {
             selectedFieldIndex = selectedFieldIndex >= 6 ? selectedFieldIndex - 6 : selectedFieldIndex + 3;
-            BoardActions.highlightSelectedField(selectedFieldIndex);
+            action(selectedFieldIndex);
         }
-    }
-    BoardActions.highlightSelectedField(selectedFieldIndex);
-    return (event) => {
-        keyMoves[event.keyCode]();
     };
+
+    return {
+        setGameNavigation: actions => {
+            document.onkeydown = event => {
+                const keyCode = event.keyCode;
+                const action = actions[keyCode];
+                keyMoves[keyCode](action);
+            };
+        },
+        setRestartGame: () => document.onkeydown = () => window.location.reload()
+    }
 }
 
-export default keyActions();
+export default KeyActions();

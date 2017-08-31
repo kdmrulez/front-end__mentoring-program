@@ -12,26 +12,19 @@ const EndOfGameActions = () => {
 
     }
 
-    const performActionForGameEnd = (text) => {
-        document.getElementsByClassName('game-status')[0].innerText = text;
-        document.onkeydown = () => window.location.reload();
-    }
     return {
         checkWinning: (index, fields) => {
             let isWinner = false;
             sequenceForIndex[index].forEach(sequence => {
                 let sign = fields[index];
                 if (sign === fields[sequence[0]] && sign === fields[sequence[1]]) {
-                    performActionForGameEnd('Player ' + sign + ' won');
                     isWinner = true;
                     return;
                 }
             })
             return isWinner;
         },
-        draw: () => {
-            performActionForGameEnd('Draw');
-        }
+        draw: fields => fields.filter(field=> !field).length===0
     }
 }
 
