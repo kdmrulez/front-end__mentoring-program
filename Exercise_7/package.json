@@ -4,7 +4,6 @@
   "description": "7th exercise from mentoring program",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack scripts\\GameFlow.js scripts\\index.js"
   },
   "author": "Lukasz Jedrzejewski",

@@ -1,6 +1,7 @@
 import KeyActions from './ticTacToe/KeyActions';
-import Board from './ticTacToe/Board'
-import EndOfGameCheck from './ticTacToe/EndOfGameCheck'
+import Board from './ticTacToe/Board';
+import EndOfGameCheck from './ticTacToe/EndOfGameCheck';
+import {SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY} from './ticTacToe/Constraints';
 
 (() => {
     const DEFAULT_DELAY = 300;
@@ -24,31 +25,32 @@ import EndOfGameCheck from './ticTacToe/EndOfGameCheck'
     };
 
     const putSign = (fieldIndex) => {
-        putSignDelay(DEFAULT_DELAY).then(() => {
-            if (!fields[fieldIndex]) {
+        if (!fields[fieldIndex]) {
+            putSignDelay(DEFAULT_DELAY).then(() => {
                 Board.putSign(fieldIndex, currentSign);
                 fields[fieldIndex] = currentSign;
-            }
 
-            if (EndOfGameCheck.checkWinning(fieldIndex, fields)) {
-                endGameActions(`Player ${currentSign} won`);
-                return;
-            }
 
-            if (EndOfGameCheck.draw(fields)) {
-                endGameActions('Draw');
-                return;
-            }
-            changePlayer()
-        })
+                if (EndOfGameCheck.checkWinning(fieldIndex, fields)) {
+                    endGameActions(`Player ${currentSign} won`);
+                    return;
+                }
+
+                if (EndOfGameCheck.draw(fields)) {
+                    endGameActions('Draw');
+                    return;
+                }
+                changePlayer();
+            })
+        }
     };
 
     KeyActions.setGameNavigation({
-        32: putSign,
-        37: highlightField,
-        38: highlightField,
-        39: highlightField,
-        40: highlightField
+        [SPACE_KEY]: putSign,
+        [LEFT_KEY]: highlightField,
+        [UP_KEY]: highlightField,
+        [RIGHT_KEY]: highlightField,
+        [DOWN_KEY]: highlightField
     });
 })();
 

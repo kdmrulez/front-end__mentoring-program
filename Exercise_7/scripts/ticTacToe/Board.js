@@ -1,12 +1,12 @@
 import Painter from './Painter.js';
-const Board = () => {
-    return {
-        putSign: (index, sign) => Painter.drawSign(index, sign),
 
-        highlightField: index => Painter.highlightField(index),
+const Board = () => ({
+    putSign: (index, sign) => Painter.drawSign(index, sign),
 
-        changeGameStatus: text => Painter.changeGameStatus(text)
-    }
-}
+    highlightField: index => Painter.highlightField(index),
+
+    changeGameStatus: text => Painter.changeGameStatus(text)
+})
+
 
 export default Board();

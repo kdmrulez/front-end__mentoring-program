@@ -6,7 +6,7 @@ const EndOfGameActions = () => {
         3: [[0, 6], [4, 5]],
         4: [[0, 8], [3, 5], [2, 6], [1, 7]],
         5: [[2, 8], [3, 4]],
-        6: [[0, 3], [7, 8],[2,4]],
+        6: [[0, 3], [7, 8], [2, 4]],
         7: [[1, 4], [6, 8]],
         8: [[0, 4], [2, 5], [6, 7]]
 
@@ -15,16 +15,18 @@ const EndOfGameActions = () => {
     return {
         checkWinning: (index, fields) => {
             let isWinner = false;
-            sequenceForIndex[index].forEach(sequence => {
-                let sign = fields[index];
+
+            for (const sequence  of sequenceForIndex[index]) {
+                const sign = fields[index];
                 if (sign === fields[sequence[0]] && sign === fields[sequence[1]]) {
                     isWinner = true;
-                    return;
+                    break;
                 }
-            })
+            }
             return isWinner;
         },
-        draw: fields => fields.filter(field=> !field).length===0
+
+        draw: fields => fields.every(field => field)
     }
 }
 

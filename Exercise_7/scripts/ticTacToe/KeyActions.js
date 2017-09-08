@@ -1,27 +1,27 @@
+import {SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY} from './Constraints';
+
 const KeyActions = () => {
     let selectedFieldIndex = 4;
+    
     const keyMoves = {
-        /*SPACE KEY*/
-        32: action => action(selectedFieldIndex),
+        [SPACE_KEY]: action => action(selectedFieldIndex),
 
-        /*LEFT KEY*/
-        37: action => {
+        [LEFT_KEY]: action => {
             selectedFieldIndex = selectedFieldIndex >= 1 ? --selectedFieldIndex : 8;
             action(selectedFieldIndex);
         },
 
-        /*UP KEY*/
-        38: action => {
+        [UP_KEY]: action => {
             selectedFieldIndex = selectedFieldIndex <= 2 ? selectedFieldIndex + 6 : selectedFieldIndex - 3;
             action(selectedFieldIndex);
         },
-        /*RIGHT KEY*/
-        39: action => {
+
+        [RIGHT_KEY]: action => {
             selectedFieldIndex = selectedFieldIndex >= 8 ? 0 : ++selectedFieldIndex;
             action(selectedFieldIndex);
         },
-        /*DOWN KEY*/
-        40: action => {
+
+        [DOWN_KEY]: action => {
             selectedFieldIndex = selectedFieldIndex >= 6 ? selectedFieldIndex - 6 : selectedFieldIndex + 3;
             action(selectedFieldIndex);
         }
