@@ -1,0 +1,51 @@
+$border: 0.5rem solid black;
+
+* {
+  font-size: 10px;
+}
+
+.game-status {
+  display: flex;
+  font-size: 3rem;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.board {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__row {
+    border-top: $border;
+    display: flex;
+    &:last-of-type {
+      border-bottom: $border;
+    }
+  }
+}
+
+.board__field {
+  align-items: center;
+  border-box: box-sizing;
+  border-left: $border;
+  display: flex;
+  font-size: 4rem;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
+  &:last-of-type {
+    border-right: $border;
+  }
+  &_highlighted {
+    background-color: lightgray;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .board__field {
+    font-size: 10rem;
+    height: 15rem;
+    width: 15rem;
+  }
+}

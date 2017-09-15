@@ -1,0 +1,11 @@
+{
+  "name": "exercise_7",
+  "version": "1.0.0",
+  "description": "7th exercise from mentoring program",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack scripts\\GameFlow.js scripts\\index.js"
+  },
+  "author": "Lukasz Jedrzejewski",
+  "license": "ISC"
+}
