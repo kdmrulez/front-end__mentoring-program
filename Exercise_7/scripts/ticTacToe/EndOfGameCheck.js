@@ -9,26 +9,21 @@ const EndOfGameActions = () => {
         6: [[0, 3], [7, 8], [2, 4]],
         7: [[1, 4], [6, 8]],
         8: [[0, 4], [2, 5], [6, 7]]
-
-    }
+    };
 
     return {
         checkWinning: (index, fields) => {
-            let isWinner = false;
-
             for (const sequence  of sequenceForIndex[index]) {
                 const sign = fields[index];
                 if (sign === fields[sequence[0]] && sign === fields[sequence[1]]) {
-                    isWinner = true;
-                    break;
+                    return true;
                 }
             }
-            return isWinner;
+            return false;
         },
-
-        draw: fields => fields.every(field => field)
+        notEmptyField: field => (field !== ''),
+        checkDraw: fields => fields.every(this.notEmptyField)
     }
-}
-
+};
 
 export default EndOfGameActions();

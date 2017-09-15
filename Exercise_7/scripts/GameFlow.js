@@ -1,9 +1,9 @@
 import KeyActions from './ticTacToe/KeyActions';
 import Board from './ticTacToe/Board';
 import EndOfGameCheck from './ticTacToe/EndOfGameCheck';
-import {SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY} from './ticTacToe/Constraints';
+import { SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY } from './ticTacToe/Constraints';
 
-(() => {
+{
     const DEFAULT_DELAY = 300;
     let currentSign = 'X';
     const fields = ['', '', '', '', '', '', '', '', ''];
@@ -15,7 +15,7 @@ import {SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY} from './ticTacToe/Cons
     const putSignDelay = delay => new Promise(resolve => setTimeout(resolve, delay));
 
     const changePlayer = () => {
-        currentSign = currentSign === 'X' ? '0' : 'X'
+        currentSign = currentSign === 'X' ? '0' : 'X';
         Board.changeGameStatus(`Player ${currentSign} turn`);
     };
 
@@ -36,7 +36,7 @@ import {SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY} from './ticTacToe/Cons
                     return;
                 }
 
-                if (EndOfGameCheck.draw(fields)) {
+                if (EndOfGameCheck.checkDraw(fields)) {
                     endGameActions('Draw');
                     return;
                 }
@@ -52,5 +52,5 @@ import {SPACE_KEY, LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY} from './ticTacToe/Cons
         [RIGHT_KEY]: highlightField,
         [DOWN_KEY]: highlightField
     });
-})();
+}
 
