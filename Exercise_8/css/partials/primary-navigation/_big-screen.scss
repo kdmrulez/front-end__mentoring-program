@@ -1,0 +1,19 @@
+@import '../variables';
+
+/*PRIMARY NAVIGATION*/
+
+@media only screen and (min-width: $big-screen_min-width) {
+  .primary-navigation {
+    display: flex;
+    margin: 0 5rem;
+    width: 30vw;
+
+    &__item {
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0 1rem;
+      text-decoration: none;
+    }
+  }
+}

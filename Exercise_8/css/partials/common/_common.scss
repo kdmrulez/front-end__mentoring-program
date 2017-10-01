@@ -1,0 +1,18 @@
+@import '../variables';
+
+/*COMMON*/
+
+* {
+  font-size: $basic_font-size;
+}
+
+/*DEFAULT SETUP FOR FONT-AWESOME ICONS*/
+.fa {
+  padding: 1rem;
+}
+
+/*DEFAULT SETUP FOR ALL LINKS*/
+.link {
+  color: black;
+  text-decoration: none;
+}
