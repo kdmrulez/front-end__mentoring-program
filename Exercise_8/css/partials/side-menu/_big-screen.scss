@@ -1,0 +1,9 @@
+@import '../variables';
+
+/*SIDE-MENU*/
+
+@media only screen and (min-width: $big-screen_min-width) {
+  .side-menu {
+    display: none;
+  }
+}

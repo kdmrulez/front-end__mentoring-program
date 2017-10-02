@@ -1,0 +1,27 @@
+@import '../variables';
+/*REGISTRATION*/
+@media only screen and (min-width: $big-screen_min-width) {
+  .registration {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 5rem;
+    width: 30vw;
+
+    &__search-bar {
+      font-size: 1rem;
+      padding: 0.7rem 0.2rem;
+      text-align: center;
+    }
+
+    &__entry {
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+
+      &--shop-link {
+        font-size: 2rem;
+      }
+    }
+  }
+}
