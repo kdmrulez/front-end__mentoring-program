@@ -1,0 +1,16 @@
+@import '../variables';
+
+/*SELECT-NAVIGATION*/
+
+@media only screen and (max-width: $small-screen_max-width) {
+  .select-navigation {
+    display: block;
+    font-size: 2rem;
+    margin: 8rem auto 0 auto;
+    width: 80vw;
+
+    &__item {
+      font-size: 2rem;
+    }
+  }
+}
