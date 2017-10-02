@@ -4,6 +4,10 @@
   "description": "Solution to 8th exercise",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
+=======
+    "prestart": "",
+>>>>>>> ea00af7ad3fd0c5e666ac8a49c67476db922455a
     "start": "start http://localhost:8080/ & webpack-dev-server --progress --colors "
   },
   "author": "Lukasz Jedrzejewski",
@@ -19,7 +23,10 @@
     "eslint-config-airbnb-base": "^12.0.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
+<<<<<<< HEAD
     "font-awesome": "^4.7.0",
+=======
+>>>>>>> ea00af7ad3fd0c5e666ac8a49c67476db922455a
     "style-loader": "^0.18.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
