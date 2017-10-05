@@ -4,6 +4,7 @@
   "description": "Solution to 8th exercise",
   "main": "index.js",
   "scripts": {
+    "prestart": "eslint ./",
     "start": "start http://localhost:8080/ & webpack-dev-server --progress --colors "
   },
   "author": "Lukasz Jedrzejewski",

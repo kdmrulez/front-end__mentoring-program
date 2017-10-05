@@ -15,7 +15,6 @@
       text-decoration: none;
 
       &--highlighted {
-        @extend .sub-navigation__item;
         font-weight: bold;
       }
     }

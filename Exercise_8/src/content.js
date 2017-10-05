@@ -1,6 +1,8 @@
 /* global window:true */
+const content = window.document.getElementById('content');
+
 const setContent = (data) => {
-  window.document.getElementById('content').innerHTML = data;
+  content.innerHTML = data;
 };
 
 export default setContent;
