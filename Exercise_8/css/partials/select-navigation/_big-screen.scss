@@ -1,0 +1,9 @@
+@import '../variables';
+
+/*SELECT-NAVIGATION*/
+
+@media only screen and (min-width: $big-screen_min-width) {
+  .select-navigation {
+    display: none;
+  }
+}
