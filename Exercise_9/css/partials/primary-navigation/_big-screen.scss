@@ -1,3 +1,4 @@
+@import '../colors';
 @import '../variables';
 
 /*PRIMARY NAVIGATION*/
@@ -9,7 +10,7 @@
     width: 30vw;
 
     &__item {
-      color: black;
+      color: $linksColor;
       cursor: pointer;
       font-size: 1.2rem;
       font-weight: bold;

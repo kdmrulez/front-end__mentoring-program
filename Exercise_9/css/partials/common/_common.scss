@@ -1,3 +1,4 @@
+@import '../colors';
 @import '../variables';
 
 /*COMMON*/
@@ -13,6 +14,6 @@
 
 /*DEFAULT SETUP FOR ALL LINKS*/
 .link {
-  color: black;
+  color: $linksColor;
   text-decoration: none;
 }

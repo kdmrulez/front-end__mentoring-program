@@ -1,16 +1,21 @@
 /* global window:true */
 import App from './app';
 
-function MyFramework() {
-  const appInstances = new Map();
-  this.createRoot = (appName) => {
+class MyFramework {
+  constructor() {
+    this.appInstances = new Map();
+  }
+
+  createRoot(appName) {
     const appRootElement = window.document.querySelector(`main[wd-root=${appName}]`);
     const appInstance = new App(appRootElement);
-    appInstances.set(appName, appInstance);
+    this.appInstances.set(appName, appInstance);
     return appInstance;
-  };
+  }
 
-  this.root = appName => appInstances.get(appName);
+  root(appName) {
+    return this.appInstances.get(appName);
+  }
 }
 
 export default MyFramework;

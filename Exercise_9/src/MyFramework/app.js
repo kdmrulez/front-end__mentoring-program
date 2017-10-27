@@ -1,22 +1,29 @@
 import contentService from './services/contentService';
 import historyService from './services/historyService';
 
-function App(rootElement) {
-  let appRoutes = [];
-  let urlToSet = '';
-
-  function findByUrl(route) {
-    return route.url === urlToSet;
+/* global window:true */
+class App {
+  constructor(rootElement) {
+    this.rootElement = rootElement;
+    this.appRoutes = {};
   }
 
-  this.routes = (routes) => { appRoutes = routes; };
+  routes(routes) {
+    this.appRoutes = routes;
+    this.navigate(Object.keys(this.appRoutes)[0]);
+  }
 
-  this.navigate = (url) => {
-    urlToSet = url;
-    const route = appRoutes.find(findByUrl);
-    historyService.addToHistory(route.url);
-    contentService.setContent(rootElement, route.templateUrl);
-  };
+  navigate(relativeUrl) {
+    let absoluteUrl;
+    if (relativeUrl !== '/') {
+      absoluteUrl = `${window.location.origin}${relativeUrl}`;
+    } else {
+      absoluteUrl = window.location.origin;
+    }
+    const templateUrl = this.appRoutes[relativeUrl];
+    historyService.addToHistory(absoluteUrl);
+    contentService.setContent(this.rootElement, templateUrl);
+  }
 }
 
 export default App;
