@@ -1,4 +1,4 @@
-import contentService from './services/contentService';
+import api from './api';
 import historyService from './services/historyService';
 
 /* global window:true */
@@ -14,15 +14,14 @@ class App {
   }
 
   navigate(relativeUrl) {
-    let absoluteUrl;
-    if (relativeUrl !== '/') {
-      absoluteUrl = `${window.location.origin}${relativeUrl}`;
-    } else {
-      absoluteUrl = window.location.origin;
-    }
+    const absoluteUrl = `${window.location.origin}${relativeUrl}`;
     const templateUrl = this.appRoutes[relativeUrl];
+
     historyService.addToHistory(absoluteUrl);
-    contentService.setContent(this.rootElement, templateUrl);
+    api.getContent(templateUrl)
+      .then((content) => {
+        this.rootElement.innerHTML = content;
+      });
   }
 }
 

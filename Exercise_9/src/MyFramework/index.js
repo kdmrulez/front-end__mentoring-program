@@ -7,7 +7,7 @@ class MyFramework {
   }
 
   createRoot(appName) {
-    const appRootElement = window.document.querySelector(`main[wd-root=${appName}]`);
+    const appRootElement = window.document.querySelector(`[wd-root=${appName}]`);
     const appInstance = new App(appRootElement);
     this.appInstances.set(appName, appInstance);
     return appInstance;
