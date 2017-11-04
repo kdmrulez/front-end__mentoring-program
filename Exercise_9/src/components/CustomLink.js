@@ -5,9 +5,9 @@ const customlinkComponent = {
   beforeMount: (app, element, componentData) => {
     componentsService.setAttributes(element, componentData);
     const linkUrl = componentData.getNamedItem('href').value;
-    element.removeAttribute('href');
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (event) => {
       app.navigate(linkUrl);
+      event.preventDefault();
     }, false);
   },
 };
